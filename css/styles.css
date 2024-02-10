@@ -48,7 +48,7 @@ p {
 }
 
 .container {
-  width: 1158px;
+  max-width: 1158px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -107,7 +107,14 @@ p {
   list-style: none;
   margin: 0;
   gap: 40px;
-  display: flex;
+  /* display: flex; */
+}
+
+.list-contacts {
+  list-style: none;
+  margin: 0;
+  gap: 40px;
+  display: none;
 }
 
 .div-list {
@@ -156,6 +163,7 @@ p {
 
 .address-title {
   font-style: normal;
+  display: none;
   color: #757575;
   font-size: 14px;
   font-weight: 500;
@@ -206,7 +214,7 @@ p {
 }
 
 .div-container {
-  width: 1158px;
+  max-width: 1158px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -256,20 +264,48 @@ p {
 }
 
 .key-words-list {
-  display: flex;
+  display: grid;
   gap: 24px;
   list-style: none;
+  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 0;
 }
 
+@media screen and (width >= 768px) {
+  .key-words-list {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    font-size: 12px;
+  }
+}
+
+@media screen and (width >= 768px) {
+  .key-words {
+    font-size: 20px;
+  }
+}
+
 .words-list-item {
   flex-basis: calc((100% - 72px) / 4);
+  min-width: 264px;
+  padding: 20px;
 }
 
 .four-list {
   list-style: none;
   padding: 120px 0;
+}
+
+@media screen and (429px <= width <= 768px) {
+  .four-list {
+    display: flex;
+    padding: 96px 0;
+  }
 }
 
 .visually-hidden {
@@ -287,7 +323,8 @@ p {
 
 .key-words {
   color: var(--NAVY-BLUE);
-  font-size: 20px;
+  text-align: center;
+  font-size: 36px;
   font-weight: 500;
   line-height: 120%;
   margin-bottom: 8px;
@@ -296,6 +333,8 @@ p {
 
 .key-words-section {
   color: var(--SLATE);
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -304,14 +343,22 @@ p {
 
 .div-container-four {
   display: flex;
-  width: 1158px;
+  max-width: 1158px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .activ-list {
+  display: none;
   padding-bottom: 120px;
+}
+
+@media screen and (width >= 768px) {
+  .activ-list {
+    display: flex;
+    padding-bottom: 120px;
+  }
 }
 
 .activ-div-container {
@@ -337,7 +384,6 @@ p {
 }
 
 .container-our-team {
-  width: 1158px;
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
@@ -345,6 +391,7 @@ p {
 
 .people {
   background-color: var(--WHITE);
+  justify-content: center;
   width: 264px;
   border-radius: 0px 0px 4px 4px;
   flex-basis: calc((100% - 72px) / 4);
@@ -366,7 +413,20 @@ p {
 .team-list {
   background-color: var(--CLOUD);
   gap: 24px;
-  display: flex;
+  display: grid;
+  list-style: none;
+  padding: 0px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (width >= 768px) {
+  .team-list {
+    background-color: var(--CLOUD);
+    gap: 24px;
+    display: flex;
+  }
 }
 
 .team-title {
@@ -563,7 +623,7 @@ p {
 }
 
 .icons-four {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 264px;
@@ -571,6 +631,18 @@ p {
   border-radius: 4px;
   background-color: var(--CLOUD);
   margin-bottom: 8px;
+}
+
+@media screen and (width >= 768px) {
+  .icons-four {
+    display: flex;
+  }
+}
+
+@media screen and (1158px >= width >= 768px) {
+  .icons-four {
+    display: none;
+  }
 }
 
 .socials-ellipse {
@@ -673,9 +745,11 @@ p {
   text-decoration: none;
   list-style: none;
   text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
   display: flex;
   gap: 24px;
-  height: 88px;
+  /* height: 88px; */
 }
 
 .customers-word {
@@ -1042,4 +1116,11 @@ p {
 
 .footer-sub-icon {
   margin-left: 16px;
+}
+
+.total-footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
